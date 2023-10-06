@@ -1,0 +1,420 @@
+3M Company
+Abbott Laboratories
+AbbVie Inc.
+Aflac Inc.
+Agilent Technologies Inc.
+Air Products and Chemicals Inc.
+Alaska Air Group Inc.
+Albemarle Corporation
+Alexandria Real Estate Equities Inc.
+Align Technology Inc.
+Allegion plc
+Allergan plc
+Alliance Data Systems Corporation
+Alliant Energy Corporation
+Allstate Corporation
+Alphabet Inc.
+Altria Group Inc.
+Amazon.com Inc.
+Ameren Corporation
+American Airlines Group Inc.
+American Electric Power Company Inc.
+American Express Company
+American Financial Group Inc.
+American International Group Inc.
+American Tower Corporation
+Ameriprise Financial Inc.
+AmerisourceBergen Corporation
+Amtrak
+Anadarko Petroleum Corporation
+Anthem Inc.
+Aon plc
+Apache Corporation
+Apartment Investment and Management Company
+Apple Inc.
+Applied Materials Inc.
+Archer-Daniels-Midland Company
+Arthur J. Gallagher & Co.
+Assurant Inc.
+AT&T Inc.
+Autodesk Inc.
+Automatic Data Processing Inc.
+AutoZone Inc.
+AvalonBay Communities Inc.
+Avery Dennison Corporation
+Baker Hughes a GE company
+Ball Corporation
+Bank of America Corporation
+Baxter International Inc.
+BB&T Corporation
+Becton Dickinson and Company
+Berkshire Hathaway Inc.
+Best Buy Co. Inc.
+Biogen Inc.
+BlackRock Inc.
+Boeing Company
+Booz Allen Hamilton Holding Corporation
+BorgWarner Inc.
+Boston Properties Inc.
+Boston Scientific Corporation
+Bristol-Myers Squibb Company
+C.H. Robinson Worldwide Inc.
+Cabot Oil & Gas Corporation
+Campbell Soup Company
+Capital One Financial Corporation
+Cardinal Health Inc.
+Carnival Corporation
+Caterpillar Inc.
+CBRE Group Inc.
+CBS Corporation
+Celgene Corporation
+Centene Corporation
+CenterPoint Energy Inc.
+CenturyLink Inc.
+Cerner Corporation
+Charles Schwab Corporation
+Chevron Corporation
+Chubb Limited
+Cincinnati Financial Corporation
+Cintas Corporation
+Cisco Systems Inc.
+Citigroup Inc.
+Citizens Financial Group Inc.
+Coca-Cola Company
+Cognizant Technology Solutions Corporation
+Colgate-Palmolive Company
+Comcast Corporation
+Conagra Brands Inc.
+Concho Resources Inc.
+ConocoPhillips
+Consolidated Edison Inc.
+Constellation Brands Inc.
+Consumers Energy Inc.
+Crown Castle International Corp.
+Cummins Inc.
+D.R. Horton Inc.
+Danaher Corporation
+Darden Restaurants Inc.
+DaVita Inc.
+Deere & Company
+Delta Air Lines Inc.
+Dentons US LLP
+DCP Midstream LP
+Deutsche Bank AG
+Discover Financial Services
+Discovery Inc.
+Dollar General Corporation
+Dollar Tree Inc.
+Dominion Energy Inc.
+Dover Corporation
+DowDuPont Inc.
+DTE Energy Company
+Duke Energy Corporation
+Dun & Bradstreet Corporation
+E*TRADE Financial Corporation
+Eastman Chemical Company
+Eaton Corporation plc
+Ecolab Inc.
+Edison International
+Edward Jones
+El Paso Electric Company
+Eli Lilly and Company
+Emerson Electric Company
+Entergy Corporation
+EOG Resources Inc.
+Equifax Inc.
+Equity Residential
+Essex Property Trust Inc.
+Exelon Corporation
+Exxon Mobil Corporation
+F5 Networks Inc.
+Facebook Inc.
+Fastenal Company
+Federal Realty Investment Trust
+FedEx Corporation
+Fidelity National Financial Inc.
+Fidelity National Information Services Inc.
+Fifth Third Bancorp
+FirstEnergy Corp.
+Fiserv Inc.
+FLIR Systems Inc.
+Flowserve Corporation
+Fluor Corporation
+FMC Corporation
+Foot Locker Inc.
+Ford Motor Company
+Fortive Corporation
+Fortune Brands Home & Security Inc.
+Franklin Resources Inc.
+Freeport-McMoRan Inc.
+Gap Inc.
+Garmin Ltd.
+General Dynamics Corporation
+General Electric Company
+General Mills Inc.
+General Motors Company
+Genuine Parts Company
+Gilead Sciences Inc.
+Goldman Sachs Group Inc.
+Grainger (W.W.) Inc.
+Halliburton Company
+Harley-Davidson Inc.
+Harris Corporation
+Hartford Financial Services Group Inc.
+HCA Healthcare Inc.
+HCP Inc.
+Helmerich & Payne Inc.
+Henry Schein Inc.
+Hess Corporation
+Hewlett Packard Enterprise Company
+Hilton Worldwide Holdings Inc.
+Hologic Inc.
+Home Depot Inc.
+Honeywell International Inc.
+Hormel Foods Corporation
+Host Hotels & Resorts Inc.
+HP Inc.
+Humana Inc.
+Huntington Bancshares Inc.
+Huntsman Corporation
+IBM Corporation
+Illinois Tool Works Inc.
+Ingersoll-Rand plc
+Intel Corporation
+Intercontinental Exchange Inc.
+International Business Machines Corporation
+International Paper Company
+Interpublic Group of Companies Inc.
+Intuit Inc.
+Intuitive Surgical Inc.
+Iron Mountain Incorporated
+J.B. Hunt Transport Services Inc.
+J.M. Smucker Company
+Jacobs Engineering Group Inc.
+JetBlue Airways Corporation
+Johnson & Johnson
+Johnson Controls International plc
+JPMorgan Chase & Co.
+Juniper Networks Inc.
+Kellogg Company
+KeyCorp
+Kimberly-Clark Corporation
+Kinder Morgan Inc.
+KLA Corporation
+Kohl's Corporation
+Kraft Heinz Company
+Kroger Company
+L Brands Inc.
+Laboratory Corporation of America Holdings
+Lam Research Corporation
+Leggett & Platt Incorporated
+Lennar Corporation
+Leucadia National Corporation
+Level 3 Communications Inc.
+Liberty Global plc
+Liberty Interactive Corporation
+Liberty Mutual Holding Company Inc.
+Lincoln National Corporation
+Lockheed Martin Corporation
+Loews Corporation
+Lowe's Companies Inc.
+M&T Bank Corporation
+Macerich
+Marathon Oil Corporation
+Marathon Petroleum Corporation
+Marriott International
+Marsh & McLennan Companies Inc.
+Martin Marietta Materials Inc.
+Masco Corporation
+Mastercard Incorporated
+Mattel Inc.
+McDonald's Corporation
+McKesson Corporation
+Medtronic plc
+Merck & Co. Inc.
+MetLife Inc.
+MGM Resorts International
+Microchip Technology Inc.
+Micron Technology Inc.
+Microsoft Corporation
+Mohawk Industries Inc.
+Molson Coors Brewing Company
+Mondelez International Inc.
+Monsanto Company
+Monster Beverage Corporation
+Morgan Stanley
+Motorola Solutions Inc.
+MSCI Inc.
+Mylan N.V.
+Nasdaq Inc.
+National Oilwell Varco Inc.
+Nationwide Mutual Insurance Company
+Nektar Therapeutics
+NetApp Inc.
+Netflix Inc.
+Newell Brands Inc.
+Newfield Exploration Company
+Newmont Mining Corporation
+NextEra Energy Inc.
+Nielsen Holdings plc
+Nike Inc.
+NiSource Inc.
+Noble Energy Inc.
+Nordstrom Inc.
+Northern Trust Corporation
+Norwegian Cruise Line Holdings Ltd.
+NRG Energy Inc.
+Nucor Corporation
+Nvidia Corporation
+O'Reilly Automotive Inc.
+Occidental Petroleum Corporation
+Omnicom Group Inc.
+Oracle Corporation
+PACCAR Inc.
+Packaging Corporation of America
+Parker-Hannifin Corporation
+Parsley Energy Inc.
+Paychex Inc.
+PayPal Holdings Inc.
+Pentair plc
+People's United Financial Inc.
+PepsiCo Inc.
+PerkinElmer Inc.
+Perrigo Company
+Pfizer Inc.
+PG&E Corporation
+Phillips 66
+Pinnacle West Capital Corporation
+Pioneer Natural Resources Company
+PNC Financial Services Group Inc.
+Polo Ralph Lauren Corporation
+PPG Industries Inc.
+Praxair Inc.
+Principal Financial Group Inc.
+Procter & Gamble Company
+Progressive Corporation
+Prudential Financial Inc.
+Public Service Enterprise Group Inc.
+Publix Super Markets Inc.
+PulteGroup Inc.
+PVH Corp.
+Qorvo Inc.
+QUALCOMM Incorporated
+Quest Diagnostics Incorporated
+Range Resources Corporation
+Raymond James Financial Inc.
+Raytheon Company
+Realty Income Corporation
+Red Hat Inc.
+Regeneron Pharmaceuticals Inc.
+Regions Financial Corporation
+Republic Services Inc.
+ResMed Inc.
+Robert Half International Inc.
+Rockwell Automation Inc.
+Rockwell Collins Inc.
+Roper Technologies Inc.
+Ross Stores Inc.
+Royal Caribbean Cruises Ltd.
+Ryder System Inc.
+S&P Global Inc.
+Salesforce.com Inc.
+Schlumberger Limited
+SCANA Corporation
+Seagate Technology PLC
+Sealed Air Corporation
+Sempra Energy
+Sherwin-Williams Company
+Simon Property Group Inc.
+Skyworks Solutions Inc.
+SL Green Realty Corporation
+Smith & Wesson Holding Corporation
+Snap-on Incorporated
+Southern Company
+Southwest Airlines Co.
+Spectra Energy Corp
+Spectrum Brands Holdings Inc.
+Sprint Corporation
+Stanley Black & Decker Inc.
+Starbucks Corporation
+State Street Corporation
+Steel Dynamics Inc.
+Symantec Corporation
+Sysco Corporation
+T. Rowe Price Group Inc.
+Targa Resources Corp.
+Target Corporation
+Tech Data Corporation
+Tegna Inc.
+Telephone & Data Systems Inc.
+Tenet Healthcare Corporation
+Teradata Corporation
+Tesoro Corporation
+Texas Instruments Incorporated
+Textron Inc.
+The AES Corporation
+The Clorox Company
+The Coca-Cola Company
+The Dow Chemical Company
+The Home Depot Inc.
+The J.M. Smucker Company
+The Kroger Co.
+The Mosaic Company
+The Progressive Corporation
+The PNC Financial Services Group Inc.
+The Travelers Companies Inc.
+The Walt Disney Company
+Thermo Fisher Scientific Inc.
+Tiffany & Co.
+Time Warner Inc.
+TJX Companies Inc.
+Torchmark Corporation
+Total System Services Inc.
+Tractor Supply Company
+TripAdvisor Inc.
+Twenty-First Century Fox Inc.
+Twitter Inc.
+U.S. Bancorp
+U.S. Foods Holding Corp.
+UDR Inc.
+Union Pacific Corporation
+United Continental Holdings Inc.
+United Health Group Inc.
+United Parcel Service Inc.
+United Rentals Inc.
+United Technologies Corporation
+UnitedHealth Group Inc.
+Universal Health Services Inc.
+Unum Group
+Valero Energy Corporation
+Varian Medical Systems Inc.
+Ventas Inc.
+Verisk Analytics Inc.
+Verizon Communications Inc.
+VF Corporation
+Viacom Inc.
+Visa Inc.
+Vornado Realty Trust
+Vulcan Materials Company
+Wal-Mart Stores Inc.
+Walgreens Boots Alliance Inc.
+Waste Management Inc.
+Waters Corporation
+Wells Fargo & Company
+Welltower Inc.
+Western Digital Corporation
+Western Union Company
+WestRock Company
+Weyerhaeuser Company
+Whirlpool Corporation
+Williams Companies Inc.
+Wyndham Worldwide Corporation
+Xcel Energy Inc.
+Xerox Corporation
+Xilinx Inc.
+XL Capital Ltd.
+Xylem Inc.
+Yahoo! Inc.
+Yum! Brands Inc.
+Zimmer Biomet Holdings Inc.
+Zions Bancorporation
