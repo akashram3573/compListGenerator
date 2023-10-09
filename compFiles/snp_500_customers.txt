@@ -1,23 +1,15 @@
-3M Company
-Abbott Laboratories
-AbbVie Inc.
-Aflac Inc.
-Agilent Technologies Inc.
-Air Products and Chemicals Inc.
-Alaska Air Group Inc.
-Albemarle Corporation
-Alexandria Real Estate Equities Inc.
-Align Technology Inc.
-Allegion plc
-Allergan plc
-Alliance Data Systems Corporation
-Alliant Energy Corporation
-Allstate Corporation
-Alphabet Inc.
-Altria Group Inc.
-Amazon.com Inc.
-Ameren Corporation
-American Airlines Group Inc.
-American Electric Power Company Inc.
-American Express Company
-American Financial Group Inc.
+Walmart Inc.
+AMAZON COM INC
+COSTCO WHOLESALE CORP /NEW
+KROGER CO
+HOME DEPOT, INC.
+TARGET CORP
+CVS HEALTH Corp
+Walgreens Boots Alliance, Inc.
+LOWES COMPANIES INC
+Albertsons Companies, Inc.
+Apple Inc.
+PUBLIX SUPER MARKETS INC
+BEST BUY CO INC
+TJX COMPANIES INC /DE/
+DOLLAR GENERAL CORP

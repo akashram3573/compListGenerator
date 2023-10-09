@@ -7,11 +7,11 @@ import time
 
 
 class getCompRevenue:
-    def __init__(self):
+    def __init__(self, compList):
         self.countOfLinks = 0
         self.countOfMacroTables = 0
         self.compRevDict = collections.defaultdict(float)
-
+        self.compData = compList
     def getRevenue(self, mTrendLink):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
@@ -32,7 +32,7 @@ class getCompRevenue:
                         rev = row.text
                         if '$' in rev:
                             try:
-                                rev = float(rev.replace("$", '').replace(',',''))
+                                rev = float(rev.replace("$", '').replace(',', ''))
                                 self.countOfMacroTables += 1
                                 # print(rev)
                                 return rev / 1000
@@ -42,6 +42,7 @@ class getCompRevenue:
             return -1.0
         except:
             return -1.0
+
     def getMacroLink(self, cName):
         data = requests.get("https://www.google.com/search?q=" + cName + "+annual+revenue+2022+macrotrends",
                             verify=False)
@@ -59,10 +60,10 @@ class getCompRevenue:
                     continue
                 self.countOfLinks += 1
                 rev = self.getRevenue(link)
-                self.compRevDict[cName]=rev
+                self.compRevDict[cName] = rev
                 # getRevenue(link[link.index("https"):])
                 return
-        self.compRevDict[cName]=-1.0
+        self.compRevDict[cName] = -1.0
         return
         # for data in soup(['style', 'script']):
         #     # Remove tags
@@ -78,33 +79,32 @@ class getCompRevenue:
 
     def getCompList(self):
         count = 0
-        file = open("../inputFiles/compList.txt", "r")
-        compData = file.read()
-        compData = compData.split('\n')
+        # file = open("../inputFiles/compList.txt", "r")
+        # compData = file.read()
+        # compData = compData.split('\n')
         # print(data)
-        data = [c.split('|')[0] for c in compData]
-        length = len(data)
-        temp = [tuple(c.split('|')) for c in compData]
-        lookupDict = {k.strip("\\").replace("&","and"):v for (k,v) in temp}
+        # data = [c.split('|')[0] for c in compData]
+        lookupDict = {k.strip("\\").replace("&", "and"): 0 for k in self.compData}
+        length = len(lookupDict)
         # print(set(data))
-        for d in data:
-            self.getMacroLink(d.strip("\\").replace("&","and"))
+        for d in self.compData:
+            self.getMacroLink(d.strip("\\").replace("&", "and"))
             # getCompRevenue(d.strip("\"))
 
         # self.countOfMacroTables = len(self.compRevDict.values())
-        print("Number of macrotrend links found: "+str(self.countOfLinks) + "/" + str(length))
+        print("Number of macrotrend links found: " + str(self.countOfLinks) + "/" + str(length))
         print("Number of Revenue values found within those links: " + str(self.countOfMacroTables) + "/" + str(length))
         print(self.compRevDict)
 
         print("Companies with incomplete revenues:")
-        for (k,v) in self.compRevDict.items():
+        for (k, v) in self.compRevDict.items():
             if v == -1.0:
                 print(k, ":", lookupDict[k])
 
 
-if __name__ == "__main__":
+def getRevenue(compList):
     startTime = time.time()
-    obj = getCompRevenue()
+    obj = getCompRevenue(compList)
     obj.getCompList()
     # obj.getMacroLink("JPMORGAN CHASE and CO")
     # obj.getRevenue("https://www.macrotrends.net/stocks/charts/JPM/jpmorgan-chase/revenue")
