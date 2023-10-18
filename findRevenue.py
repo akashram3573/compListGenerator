@@ -12,6 +12,16 @@ class getCompRevenue:
         self.countOfMacroTables = 0
         self.compRevDict = collections.defaultdict(float)
         self.compData = compList
+
+    def getRevenueCategory(self, rev):
+        if rev<1.0:
+            return "small"
+        elif rev>=1 and rev<10:
+            return "medium"
+        elif rev>=10 and rev<20:
+            return "large"
+        else:
+            return "superLarge"
     def getRevenue(self, mTrendLink):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
@@ -96,11 +106,17 @@ class getCompRevenue:
         print("Number of Revenue values found within those links: " + str(self.countOfMacroTables) + "/" + str(length))
         print(self.compRevDict)
 
-        print("Companies with incomplete revenues:")
+        resDict = {}
+        file = open("./compFiles/outputCompRev.txt","w")
+        # print("Companies with incomplete revenues:")
         for (k, v) in self.compRevDict.items():
             if v == -1.0:
-                print(k, ":", lookupDict[k])
-
+                # print(k, ":", lookupDict[k])
+                continue
+            else:
+                file.write(k+"|"+str(v)+"|"+self.getRevenueCategory(v))
+                file.write("\n")
+        file.close()
 
 def getRevenue(compList):
     startTime = time.time()
