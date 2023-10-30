@@ -1,11 +1,14 @@
+import json
+
+import boto3
 import pandas as pd
 from cosineSimilarity import getComp1
 from editDistance import getComp2
-from findRevenue import getRevenue
+from findRevenueLambda import getRevenue
 class comp_list_generator:
-    def __init__(self):
+    def __init__(self, compList):
         self.unique_company_index = []
-        self.company_list = []
+        self.company_list = compList
         self.index_df = pd.DataFrame()
         self.output_company_list = []
         self.not_captured_companies = []
@@ -59,12 +62,13 @@ class comp_list_generator:
 
         # company_list = pd.read_csv("nasdaq100_companies.txt", sep="\\n")
 
-        f = open("./compFiles/snp_500_customers.txt", "r")
-        self.company_list = []
-        for x in f:
-            self.company_list.append(x)
+        # f = open("./compFiles/snp_500_customers.txt", "r")
+        # self.company_list = []
+        # for x in f:
+        #     self.company_list.append(x)
 
     def comp_list(self):
+        print("hi")
         self.output_company_list=[]
         #Dataframe approach
         i=0
@@ -125,12 +129,35 @@ def getAccuracy(output_comp_list):
             count += 1
     print(count)
 
-if __name__=="__main__":
-    obj = comp_list_generator()
+def writeFile(resDict, fileName='compList.json'):
+    resDict = json.dumps(resDict)
+    s3 = boto3.resource('s3')
+    s3Obj = s3.Object('sec-corpus',fileName)
+    s3Obj.put(resDict)
+    return
+# def fileSeracher(event, context):
+def fileSearcher():
+    event = {}
+    event["compList"] = [
+        'Clear Channel Outdoor Holdings',
+        'Newsom Cory T',
+        'Airbnb',
+        'PINTEREST',
+        'COGENT COMMUNICATIONS',
+        'Lumen Technologies',
+        'Snap-on',
+        'CHARTER COMMUNICATIONS',
+        'AMC Networks Inc'
+    ]
+    event["verticalName"] = "sample"
+
+    compList = event["compList"]
+    verticalGroup = event["verticalName"]
+    obj = comp_list_generator(compList)
     output_comp_list, not_captured_company = obj.gen_comp_list()
-    # print(output_comp_list)
-    # print(not_captured_company)
-    # print(len(set(output_comp_list)))
-    # print(len(output_comp_list))
-    getRevenue(set(output_comp_list))
+
+    resCompCatList = getRevenue(set(output_comp_list), verticalGroup)
+
     # getAccuracy(output_comp_list)
+
+fileSearcher()
