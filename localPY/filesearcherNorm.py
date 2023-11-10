@@ -1,10 +1,14 @@
 import json
-
 import boto3
 import pandas as pd
-from cosineSimilarity import getComp1
 from editDistance import getComp2
 from findRevenueLambda import getRevenue
+
+import sys
+sys.path.append('C:\persistent\SalesFI_project\secCrawlerMain')
+from salesfi_p1_index_lookup.indexParser import indexParser
+
+
 class comp_list_generator:
     def __init__(self, compList):
         self.unique_company_index = []
@@ -13,22 +17,31 @@ class comp_list_generator:
         self.output_company_list = []
         self.not_captured_companies = []
 
+    # Pre-processing function to simplify company names
     def preprocess(self, company):
+        # Initialize dummy variable new_comp
         new_comp = ""
+
+        # Convert to lower case
         company = company.lower()
+
+        # Strip '\','\n' which might precede/supersede company names and thus lead to errors
+        company = company.strip('\\')
+        company = company.strip('\n')
+
+        # Check for [',','.','!','the '] and replace these with empty characters
         if "," in company:
             company = company.replace(",", "")
         if "." in company:
             company = company.replace(".", "")
         if "!" in company:
             company = company.replace("!", "")
+        if "-" in company[:5]:
+            company = company.replace("-", "")
         if "the " in company[:5]:
             company = company.replace("the ", "")
 
-        # if "-" in company:
-        #     company=company.replace("-"," ")
-        if "\n" in company:
-            company = company.strip('\n')
+        # Check for presence of common company and replace with empty character
         if " incorporated" in company[-len(" incorporated"):]:
             company = company.replace(" incorporated", "")
         if " inc" in company[-len(" inc"):]:
@@ -51,24 +64,15 @@ class comp_list_generator:
         return new_comp
 
     def read_files(self):
-        self.index_df = pd.read_csv("./compFiles/qtr1_2023.idx", sep="|")
+        self.index_df = pd.read_csv("../qtr1_2023.idx", sep="|")
         self.index_df = self.index_df.drop_duplicates(subset="Company Name")
         self.index_df["Company_Name_Initial"] = self.index_df["Company Name"]
         self.index_df["Company Name"] = self.index_df["Company Name"].apply(self.preprocess)
-
         company_index = self.index_df["Company Name"].values
-
         self.unique_company_index = list(set(company_index))
 
-        # company_list = pd.read_csv("nasdaq100_companies.txt", sep="\\n")
-
-        # f = open("./compFiles/snp_500_customers.txt", "r")
-        # self.company_list = []
-        # for x in f:
-        #     self.company_list.append(x)
 
     def comp_list(self):
-        print("hi")
         self.output_company_list=[]
         #Dataframe approach
         i=0
@@ -100,17 +104,10 @@ class comp_list_generator:
             new_df["Company_Name_Original"] = new_df["Company Name"].map(lookupDict)
 
             index_list=new_df["Company_Name_Original"].values
-            # print(index_list, company, comp)
-            # index_list = set(getComp1(index_list, company)).intersection(getComp2(index_list, company))
             index_list = getComp2(index_list, company)
             for ind in index_list:
                 if ind not in self.output_company_list:
                     self.output_company_list.append(ind)
-
-        # print(self.output_company_list)
-        # print(len(self.output_company_list))
-        # print("self.not_captured_companies:",self.not_captured_companies)
-        # print(len(self.not_captured_companies))
 
     def gen_comp_list(self):
         self.read_files()
@@ -118,7 +115,7 @@ class comp_list_generator:
         return self.output_company_list, self.not_captured_companies
 
 def getAccuracy(output_comp_list):
-    file = open("./compFiles/snp_500_customers.txt","r")
+    file = open("./compFiles/input_files.txt","r")
     data = list()
     count = 0
     for d in file:
@@ -130,34 +127,40 @@ def getAccuracy(output_comp_list):
     print(count)
 
 def writeFile(resDict, fileName='compList.json'):
+    # Code to write to s3 bucket
     resDict = json.dumps(resDict)
     s3 = boto3.resource('s3')
     s3Obj = s3.Object('sec-corpus',fileName)
     s3Obj.put(resDict)
-    return
-# def fileSeracher(event, context):
-def fileSearcher():
-    event = {}
-    event["compList"] = [
-        'Clear Channel Outdoor Holdings',
-        'Newsom Cory T',
-        'Airbnb',
-        'PINTEREST',
-        'COGENT COMMUNICATIONS',
-        'Lumen Technologies',
-        'Snap-on',
-        'CHARTER COMMUNICATIONS',
-        'AMC Networks Inc'
-    ]
-    event["verticalName"] = "sample"
 
-    compList = event["compList"]
-    verticalGroup = event["verticalName"]
+    # Code to call subsequent lambda function call
+    # lambdaClient = boto3.client('lambda', region_name='us-east-1')
+    # res = lambdaClient.invoke(FunctionName="indexParser", InvocationType="Event",
+    #                           Payload=json.dumps({'res': json.dumps(resDict)}))
+
+    return
+
+# def fileSearcher(event, context):
+def fileSearcher():
+    filename = "../compFiles/input_files.txt"
+    verticalGroup = "sample1"
+
+    file = open(filename,'r')
+    compList = file.readlines()
+    compList = [comp.strip('\n') for comp in compList]
+    # compList = data.split('\n')
+    # compList=['ross stores', 'starbucks', 'seagen', 'sirius xm holdings', 'synopsys', 'splunk', 'skyworks solutions']
+    # print(compList)
+
     obj = comp_list_generator(compList)
     output_comp_list, not_captured_company = obj.gen_comp_list()
 
     resCompCatList = getRevenue(set(output_comp_list), verticalGroup)
 
-    # getAccuracy(output_comp_list)
+    resCompCatList['verticalName'] = verticalGroup
+    print(resCompCatList)
+    # indexParser(resCompCatList)
+    print(len(resCompCatList['compList']))
+    getAccuracy(output_comp_list)
 
 fileSearcher()
